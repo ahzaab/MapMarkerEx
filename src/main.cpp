@@ -1,3 +1,8 @@
+#include "PCH.h"
+#include "Papyrus.h"
+
+using namespace MapMarkersEx;
+
 namespace
 {
 	void InitializeLog()
@@ -47,6 +52,8 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_s
 	logger::info("{} v{}"sv, Plugin::NAME, Plugin::VERSION.string());
 
 	SKSE::Init(a_skse);
+
+	Papyrus::Register();
 
 	return true;
 }

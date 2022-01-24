@@ -1,4 +1,4 @@
-This is a basic plugin template for use with CommonLibSSE
+This plugin exposes the MapMarker ObjectReference
 
 ## Requirements
 * [CMake](https://cmake.org/)
@@ -12,8 +12,8 @@ This is a basic plugin template for use with CommonLibSSE
 
 ## Building
 ```
-git clone https://github.com/Ryan-rsm-McKenzie/ExamplePlugin-CommonLibSSE
-cd ExamplePlugin-CommonLibSSE
+git clone https://github.com/ahzaab/MapMarkerEx.git
+cd MapMarkerEx
 git submodule init
 git submodule update
 cmake --preset vs2022-windows

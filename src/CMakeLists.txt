@@ -4,6 +4,10 @@ set(SOURCE_DIR "${ROOT_DIR}/src")
 set(SOURCE_FILES
 	"${SOURCE_DIR}/main.cpp"
 	"${SOURCE_DIR}/PCH.h"
+	"${SOURCE_DIR}/Papyrus.h"
+	"${SOURCE_DIR}/Papyrus.cpp"
+	"${SOURCE_DIR}/PapyrusMapMarkers.h"
+	"${SOURCE_DIR}/PapyrusMapMarkers.cpp"	
 )
 
 source_group(TREE "${ROOT_DIR}" FILES ${SOURCE_FILES})
@@ -14,6 +18,7 @@ configure_file(
 	"${VERSION_HEADER}"
 	@ONLY
 )
+
 
 source_group("src" FILES "${VERSION_HEADER}")
 
@@ -30,8 +35,7 @@ add_library(
 	"${VERSION_HEADER}"
 	"${CMAKE_CURRENT_BINARY_DIR}/version.rc"
 	"${ROOT_DIR}/.clang-format"
-	"${ROOT_DIR}/.editorconfig"
-)
+	"${ROOT_DIR}/.editorconfig")
 
 target_compile_features(
 	"${PROJECT_NAME}"
