@@ -13,9 +13,10 @@ public:
 
 private:
 	static RE::BSFixedString GetLocationName(VM *vm, StackID stackId, [[maybe_unused]] RE::StaticFunctionTag* base, RE::TESObjectREFR* ref);
+	static RE::BSTArray<RE::TESObjectREFR*> GetCurrentWorldSpaceMapMarkers(VM* vm, StackID stackId, [[maybe_unused]] RE::StaticFunctionTag* base, bool abcanTravelToOnly);
 	static uint32_t GetMarkerType(VM *vm, StackID stackId, [[maybe_unused]] RE::StaticFunctionTag* base, RE::TESObjectREFR* ref);
 	static bool IsVisible(VM *vm, StackID stackId, [[maybe_unused]] RE::StaticFunctionTag* base, RE::TESObjectREFR* ref);
-
-
-	static RE::ExtraMapMarker* GetMapMarker(RE::TESObjectREFR* ref);
+	static bool CanTravelTo(VM* vm, StackID stackId, [[maybe_unused]] RE::StaticFunctionTag* base, RE::TESObjectREFR* ref);
+	static bool CanTravelToInternal(RE::TESObjectREFR* ref);
+	static RE::ExtraMapMarker* GetMapMarkerInternal(RE::TESObjectREFR* ref);
 };

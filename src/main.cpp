@@ -1,5 +1,7 @@
 #include "PCH.h"
 #include "Papyrus.h"
+#include <windows.h>
+
 
 using namespace MapMarkersEx;
 
@@ -48,12 +50,21 @@ extern "C" DLLEXPORT constinit auto SKSEPlugin_Version = []() {
 
 extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_skse)
 {
+	 //while (!IsDebuggerPresent())
+	 //{
+	 //  Sleep(10);
+	 //}
+
+	 //Sleep(1000 * 2);
+
 	InitializeLog();
 	logger::info("{} v{}"sv, Plugin::NAME, Plugin::VERSION.string());
 
 	SKSE::Init(a_skse);
 
-	Papyrus::Register();
+	if (!Papyrus::Register()) {
+		return false;
+	}
 
 	return true;
 }
